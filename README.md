@@ -31,13 +31,14 @@ Este projeto consiste na modelagem e implementação de um sistema de banco de d
 ## 🗂️ Documentos e Links Necessários
 
 ### 📝 Descrição do Problema e Forma de Avaliação
- - Você pode encontrar o arquivo [AQUI](documentos/projeto_final_bd.pdf)
+ - Você pode encontrar o arquivo [AQUI](documentos/descricao_projeto_final_bd.pdf)
 
 ### 📝 Modelagem
- - [EM DESENVOLVIMENTO]
+ - Arquivo para visualizar no [Diagrams.net](https://app.diagrams.net/)
+ - [AQUI](documentos/der_sistema_gestao_escolar.drawio)
 
 ### 📝 Atividades Realizadas
- - [EM DESENVOLVIMENTO]
+ - Documentação da Modelagem [AQUI](documentos/Documentação%20do%20Projeto%20Final.docx)
 
 ### 🎥 Vídeo do Projeto em Execução
  - [EM DESENVOLVIMENTO]
