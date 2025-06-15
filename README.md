@@ -35,7 +35,9 @@ Este projeto consiste na modelagem e implementação de um sistema de banco de d
 
 ### 📝 Modelagem
  - Arquivo para visualizar no [Diagrams.net](https://app.diagrams.net/)
- - [AQUI](documentos/der_sistema_gestao_escolar.drawio)
+ - [AQUI](documentos/der_sistema_gestao_escolar)
+    - 1ª Página = Diagrama
+    - 2ª Página = Modelo Relacional
 
 ### 📝 Atividades Realizadas
  - Documentação da Modelagem [AQUI](documentos/Documentação%20do%20Projeto%20Final.docx)
