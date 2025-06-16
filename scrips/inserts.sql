@@ -28,29 +28,31 @@ INSERT INTO Usuario (CPF, NomeUsuario, SobrenomeUsuario, NumeroTelefone, Enderec
 ('77889900123', 'Renata', 'Ferreira', '99987654321', 'Rua AA, 789', 'renata.ferreira@email.com', 'senha2424', '1994-10-02', 'F'),
 ('88990011234', 'Felipe', 'Lima', '11987654321', 'Praça BB, 654', 'felipe.lima@email.com', 'senha2525', '1989-09-15', 'M');
 
+-- Inserção de Alunos para a Escola 1
 INSERT INTO Aluno (CPFUsuario, Bolsa, IDEscola) VALUES
 ('12345678901', TRUE, 1),
-('23456789012', FALSE, 2),
-('34567890123', TRUE, 3),
-('45678901234', FALSE, 4),
-('56789012345', TRUE, 5),
-('67890123456', FALSE, 6),
-('78901234567', TRUE, 7),
-('89012345678', FALSE, 8),
-('90123456789', TRUE, 9),
-('01234567890', FALSE, 10);
+('23456789012', FALSE, 1),
+('34567890123', TRUE, 1),
+('45678901234', FALSE, 1),
+('56789012345', TRUE, 1),
+('67890123456', FALSE, 1),
+('78901234567', TRUE, 1),
+('89012345678', FALSE, 1),
+('90123456789', TRUE, 1),
+('01234567890', FALSE, 1);
 
+-- inserção de Professores para a Escola 1
 INSERT INTO Professor (CPFUsuario, Titulacao, AreaEspecialidade, IDEscola) VALUES
 ('11223344556', 'Mestre', 'Matemática', 1),
-('22334455667', 'Doutor', 'Português', 2),
-('33445566778', 'Mestre', 'Física', 3),
-('44556677889', 'Doutor', 'Química', 4),
-('55667788990', 'Mestre', 'História', 5),
-('66778899001', 'Doutor', 'Geografia', 6),
-('77889900112', 'Mestre', 'Biologia', 7),
-('88990011223', 'Doutor', 'Matemática', 8),
-('99001122334', 'Mestre', 'Português', 9),
-('10112233445', 'Doutor', 'Física', 10);
+('22334455667', 'Doutor', 'Português', 1),
+('33445566778', 'Mestre', 'Física', 1),
+('44556677889', 'Doutor', 'Química', 1),
+('55667788990', 'Mestre', 'História', 1),
+('66778899001', 'Doutor', 'Geografia', 1),
+('77889900112', 'Mestre', 'Biologia', 1),
+('88990011223', 'Doutor', 'Matemática', 1),
+('99001122334', 'Mestre', 'Português', 1),
+('10112233445', 'Doutor', 'Física', 1);
 
 INSERT INTO Funcionario (CPFUsuario, Operacao) VALUES
 ('11223344567', 'Recepção'),
@@ -158,6 +160,23 @@ INSERT INTO Mensagem (IDMensagem, TextoMensagem) VALUES
 (29, 'Próximo workshop sobre sustentabilidade e meio ambiente.'),
 (30, 'O cronograma de férias foi atualizado.');
 
+-- Enviando a mensagem 3 do professor 44556677889 de quimica para varios alunos
+INSERT INTO Comunica (CPFProfessor, CPFAluno, IDMensagem, DataEnvio) VALUES
+('44556677889', '12345678901', 3, '2025-06-16 14:00:00'),
+('44556677889', '23456789012', 3, '2025-06-16 14:00:00'),
+('44556677889', '34567890123', 3, '2025-06-16 14:00:00'),
+('44556677889', '45678901234', 3, '2025-06-16 14:00:00'),
+('44556677889', '56789012345', 3, '2025-06-16 14:00:00'),
+('44556677889', '67890123456', 3, '2025-06-16 14:00:00'),
+('44556677889', '78901234567', 3, '2025-06-16 14:00:00'),
+('44556677889', '89012345678', 3, '2025-06-16 14:00:00'),
+('44556677889', '90123456789', 3, '2025-06-16 14:00:00'),
+('44556677889', '01234567890', 3, '2025-06-16 14:00:00');
+
+-- Enviando a mensagem 1 do professor 11223344556 de matematica para 1 aluno
+INSERT INTO Comunica (CPFProfessor, CPFAluno, IDMensagem, DataEnvio) VALUES
+('11223344556', '12345678901', 3, '2025-06-16 14:00:00');
+
 INSERT INTO Avisos (IDAviso, TextoAviso) VALUES
 (1, 'Atenção! Aulas serão suspensas no feriado nacional.'),
 (2, 'Reunião do conselho acadêmico marcada para sexta-feira.'),
@@ -189,3 +208,101 @@ INSERT INTO Avisos (IDAviso, TextoAviso) VALUES
 (28, 'Novo sistema de agendamento de salas para reuniões de departamentos.'),
 (29, 'Fechamento da matrícula para atividades extracurriculares.'),
 (30, 'Aviso sobre as novas normas para realização de estágios acadêmicos.');
+
+-- Funcionario 11223344567 Envia o Aviso 1 para Vários Usuários
+INSERT INTO Notifica (CPFUsuario, CPFFuncionario, IDAviso, DataEnvio) VALUES
+('12345678901', '11223344567', 1, '2025-06-16 10:30:00'),
+('23456789012', '11223344567', 1, '2025-06-16 10:30:00'),
+('34567890123', '11223344567', 1, '2025-06-16 10:30:00'),
+('45678901234', '11223344567', 1, '2025-06-16 10:30:00'),
+('56789012345', '11223344567', 1, '2025-06-16 10:30:00'),
+('67890123456', '11223344567', 1, '2025-06-16 10:30:00'),
+('78901234567', '11223344567', 1, '2025-06-16 10:30:00'),
+('89012345678', '11223344567', 1, '2025-06-16 10:30:00'),
+('90123456789', '11223344567', 1, '2025-06-16 10:30:00'),
+('01234567890', '11223344567', 1, '2025-06-16 10:30:00');
+
+INSERT INTO Departamento (SiglaDepartamento, CPFProfessor, NomeDepartamento) VALUES
+('DEP01', NULL, 'Matemática'),
+('DEP02', NULL, 'Línguas'),
+('DEP03', NULL, 'Informática'),
+('DEP04', NULL, 'Administração'),
+('DEP05', NULL, 'Engenharia'),
+('DEP06', NULL, 'Ciências Exatas'),
+('DEP07', NULL, 'Ciências Humanas'),
+('DEP08', NULL, 'Saúde'),
+('DEP09', NULL, 'Artes'),
+('DEP10', NULL, 'Educação Física');
+
+INSERT INTO Curso (SiglaCurso, SiglaDepartamento, NomeCurso, Classificacao, CargaHoraria, NumeroVagas) VALUES
+('FND01', 'DEP01', 'Matemática Fundamental', 'Fundamental', 900, 250),
+('FND02', 'DEP02', 'Português Fundamental', 'Fundamental', 900, 250),
+('FND03', 'DEP07', 'História Fundamental', 'Fundamental', 900, 250),
+('FND04', 'DEP07', 'Geografia Fundamental', 'Fundamental', 900, 250),
+('FND05', 'DEP06', 'Ciências Naturais Fundamental', 'Fundamental', 900, 250),
+('FND06', 'DEP09', 'Artes Fundamental', 'Fundamental', 900, 200),
+('FND07', 'DEP10', 'Educação Física Fundamental', 'Fundamental', 900, 200),
+('FND08', 'DEP08', 'Saúde e Bem-estar Fundamental', 'Fundamental', 900, 200),
+('FND09', 'DEP01', 'Lógica e Raciocínio Fundamental', 'Fundamental', 900, 200),
+('FND10', 'DEP03', 'Informática Básica Fundamental', 'Fundamental', 900, 150),
+
+('EM01', 'DEP01', 'Matemática Ensino Médio', 'Ensino Médio', 1200, 200),
+('EM02', 'DEP02', 'Português Ensino Médio', 'Ensino Médio', 1200, 200),
+('EM03', 'DEP07', 'Filosofia Ensino Médio', 'Ensino Médio', 1200, 150),
+('EM04', 'DEP07', 'Sociologia Ensino Médio', 'Ensino Médio', 1200, 150),
+('EM05', 'DEP06', 'Química Ensino Médio', 'Ensino Médio', 1200, 200),
+('EM06', 'DEP06', 'Física Ensino Médio', 'Ensino Médio', 1200, 200),
+('EM07', 'DEP09', 'Artes Ensino Médio', 'Ensino Médio', 1200, 150),
+('EM08', 'DEP10', 'Educação Física Ensino Médio', 'Ensino Médio', 1200, 150),
+('EM09', 'DEP08', 'Biologia Ensino Médio', 'Ensino Médio', 1200, 200),
+('EM10', 'DEP03', 'Informática Ensino Médio', 'Ensino Médio', 1200, 150),
+
+('TC01', 'DEP03', 'Técnico em Informática', 'Técnico', 1800, 100),
+('TC02', 'DEP05', 'Técnico em Mecânica', 'Técnico', 1800, 80),
+('TC03', 'DEP04', 'Técnico em Administração', 'Técnico', 1800, 80),
+('TC04', 'DEP08', 'Técnico em Enfermagem', 'Técnico', 1800, 60),
+('TC05', 'DEP09', 'Técnico em Design', 'Técnico', 1800, 70),
+('TC06', 'DEP10', 'Técnico em Educação Física', 'Técnico', 1800, 60),
+('TC07', 'DEP01', 'Técnico em Química', 'Técnico', 1800, 70),
+('TC08', 'DEP07', 'Técnico em Meio Ambiente', 'Técnico', 1800, 60),
+('TC09', 'DEP06', 'Técnico em Física Aplicada', 'Técnico', 1800, 50),
+('TC10', 'DEP03', 'Técnico em Redes de Computadores', 'Técnico', 1800, 100);
+
+-- Unidade 1 (São Paulo) - 10 cursos
+INSERT INTO Vinculo (IDEscola, SiglaCurso) VALUES
+(1, 'FND01'), 
+(1, 'FND02'), 
+(1, 'FND03'), 
+(1, 'FND04'), 
+(1, 'FND05'),
+(1, 'EM01'), 
+(1, 'EM02'), 
+(1, 'EM03'), 
+(1, 'TC01'), 
+(1, 'TC02');
+
+-- Unidade 2 (Rio de Janeiro) - 10 cursos (alguns repetidos da 1 e 3)
+INSERT INTO Vinculo (IDEscola, SiglaCurso) VALUES
+(2, 'FND04'), 
+(2, 'FND05'), 
+(2, 'FND06'), 
+(2, 'EM05'), 
+(2, 'EM06'),
+(2, 'EM07'), 
+(2, 'TC02'), 
+(2, 'TC03'), 
+(2, 'TC04'), 
+(2, 'TC05');
+
+-- Unidade 3 (Belo Horizonte) - 10 cursos (alguns repetidos da 1 e 2)
+INSERT INTO Vinculo (IDEscola, SiglaCurso) VALUES
+(3, 'FND01'), 
+(3, 'FND02'), 
+(3, 'FND07'), 
+(3, 'EM01'), 
+(3, 'EM08'),
+(3, 'EM09'), 
+(3, 'TC01'), 
+(3, 'TC06'), 
+(3, 'TC07'), 
+(3, 'TC08');

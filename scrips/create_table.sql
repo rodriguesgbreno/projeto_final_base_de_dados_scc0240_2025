@@ -73,6 +73,15 @@ CREATE TABLE Curso (
     FOREIGN KEY (SiglaDepartamento) REFERENCES Departamento(SiglaDepartamento)
 );
 
+-- Tabela Vinculo entre Escola e Curso
+CREATE TABLE Vinculo (
+    IDEscola INT NOT NULL,
+    SiglaCurso CHAR(10) NOT NULL,
+    PRIMARY KEY (IDEscola, SiglaCurso),
+    FOREIGN KEY (IDEscola) REFERENCES UnidadeEscolar(IDEscola),
+    FOREIGN KEY (SiglaCurso) REFERENCES Curso(SiglaCurso)
+);
+
 -- Tabela ComporCursoDisciplina
 CREATE TABLE ComporCursoDisciplina (
     SiglaCurso CHAR(10),
@@ -154,3 +163,16 @@ CREATE TABLE Notifica (
     FOREIGN KEY (CPFFuncionario) REFERENCES Funcionario(CPFUsuario),
     FOREIGN KEY (IDAviso) REFERENCES Avisos(IDAviso)
 );
+
+-- Tabela OfertaDisciplina
+CREATE TABLE OfertaDisciplina (
+    CodigoDisciplina CHAR(10),
+    CPFProfessor CHAR(11),
+    Dia VARCHAR(20),
+    Hora TIME,
+    Sala VARCHAR(20),
+    PRIMARY KEY (CodigoDisciplina, CPFProfessor, Dia, Hora, Sala),
+    FOREIGN KEY (CodigoDisciplina) REFERENCES Disciplina(Codigo),
+    FOREIGN KEY (CPFProfessor) REFERENCES Professor(CPFUsuario)
+);
+
