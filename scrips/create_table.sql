@@ -9,31 +9,8 @@ CREATE TABLE Usuario (
     Senha VARCHAR(100),
     DataNascimento DATE,
     Sexo CHAR(1),  -- M ou F
-    CHECK (Sexo IN ('M', 'F'))  -- Garante que o valor seja apenas M ou F
-);
-
--- Tabela Professor
-CREATE TABLE Professor (
-    CPFUsuario CHAR(11) PRIMARY KEY,
-    Titulacao VARCHAR(50),
-    AreaEspecialidade VARCHAR(100),
-    IDEscola INT,
-    FOREIGN KEY (CPFUsuario) REFERENCES Usuario(CPF)
-);
-
--- Tabela Aluno
-CREATE TABLE Aluno (
-    CPFUsuario CHAR(11) PRIMARY KEY,
-    Bolsa BOOLEAN,  -- Verdadeiro (TRUE) se o aluno for bolsista, Falso (FALSE) se não for
-    IDEscola INT,
-    FOREIGN KEY (CPFUsuario) REFERENCES Usuario(CPF)
-);
-
--- Tabela Funcionario
-CREATE TABLE Funcionario (
-    CPFUsuario CHAR(11) PRIMARY KEY,
-    Operacao VARCHAR(100),
-    FOREIGN KEY (CPFUsuario) REFERENCES Usuario(CPF)
+    CHECK (Sexo IN ('M', 'F')),  -- Garante que o valor seja apenas M ou F
+    UNIQUE (NomeUsuario, SobrenomeUsuario, NumeroTelefone)
 );
 
 -- Tabela Unidade Escolar
@@ -43,6 +20,33 @@ CREATE TABLE UnidadeEscolar (
     SiglaEstado CHAR(2),
     SiglaPais CHAR(3),
     NumeroPredio VARCHAR(10)
+);
+
+
+-- Tabela Professor
+CREATE TABLE Professor (
+    CPFUsuario CHAR(11) PRIMARY KEY,
+    Titulacao VARCHAR(50),
+    AreaEspecialidade VARCHAR(100),
+    IDEscola INT,
+    FOREIGN KEY (CPFUsuario) REFERENCES Usuario(CPF),
+    FOREIGN KEY (IDEscola) REFERENCES UnidadeEscolar(IDEscola)
+);
+
+-- Tabela Aluno
+CREATE TABLE Aluno (
+    CPFUsuario CHAR(11) PRIMARY KEY,
+    Bolsa BOOLEAN,  -- Verdadeiro (TRUE) se o aluno for bolsista, Falso (FALSE) se não for
+    IDEscola INT,
+    FOREIGN KEY (CPFUsuario) REFERENCES Usuario(CPF),
+    FOREIGN KEY (IDEscola) REFERENCES UnidadeEscolar(IDEscola)
+);
+
+-- Tabela Funcionario
+CREATE TABLE Funcionario (
+    CPFUsuario CHAR(11) PRIMARY KEY,
+    Operacao VARCHAR(100),
+    FOREIGN KEY (CPFUsuario) REFERENCES Usuario(CPF)
 );
 
 -- Tabela Departamento
@@ -175,4 +179,65 @@ CREATE TABLE OfertaDisciplina (
     FOREIGN KEY (CodigoDisciplina) REFERENCES Disciplina(Codigo),
     FOREIGN KEY (CPFProfessor) REFERENCES Professor(CPFUsuario)
 );
+
+-- Tabela Matricula de Alunos em OfertaDisciplina
+CREATE TABLE Matricula (
+    CPFAluno CHAR(11),
+    CodigoDisciplina CHAR(10),
+    CPFProfessor CHAR(11),
+    Dia VARCHAR(20),
+    Hora TIME,
+    Sala VARCHAR(20),
+    PRIMARY KEY (CPFAluno, CodigoDisciplina, CPFProfessor, Dia, Hora, Sala),
+    FOREIGN KEY (CPFAluno) REFERENCES Aluno(CPFUsuario),
+    FOREIGN KEY (CodigoDisciplina, CPFProfessor, Dia, Hora, Sala)
+        REFERENCES OfertaDisciplina(CodigoDisciplina, CPFProfessor, Dia, Hora, Sala)
+);
+
+-- Tabela de Inscricao de Matrículas em Disciplinas Ofertadas
+CREATE TABLE Inscricao (
+    DataInscricao TIMESTAMP,
+    CPFAluno CHAR(11),
+    CodigoDisciplina CHAR(10),
+    CPFProfessor CHAR(11),
+    Dia VARCHAR(20),
+    Hora TIME,
+    Sala VARCHAR(20),
+    PRIMARY KEY (DataInscricao, CPFAluno, CodigoDisciplina, CPFProfessor, Dia, Hora, Sala),
+    FOREIGN KEY (CPFAluno, CodigoDisciplina, CPFProfessor, Dia, Hora, Sala)
+        REFERENCES Matricula(CPFAluno, CodigoDisciplina, CPFProfessor, Dia, Hora, Sala)
+);
+
+-- Tabela Feedback
+CREATE TABLE FeedBack (
+    CPFAluno VARCHAR(11),
+    CPFProfessor VARCHAR(11),
+    CodigoDisciplina VARCHAR(20),
+    PRIMARY KEY (CPFAluno, CPFProfessor, CodigoDisciplina),
+    FOREIGN KEY (CPFAluno) REFERENCES Aluno(CPFUsuario),
+    FOREIGN KEY (CPFProfessor) REFERENCES Professor(CPFUsuario),
+    FOREIGN KEY (CodigoDisciplina) REFERENCES Disciplina(Codigo)
+);
+
+-- Tabela Avaliacao
+CREATE TABLE Avaliacao (
+    DataAvaliacao TIMESTAMP,
+    CPFAluno VARCHAR(11),
+    CPFProfessor VARCHAR(11),
+    CodigoDisciplina VARCHAR(20),
+    RatingProfessor INT,
+    RatingMaterial INT,
+    RatingInfraestrutura INT,
+    RatingRelevancia INT,
+    Comentario VARCHAR(500),
+    PRIMARY KEY (DataAvaliacao, CPFAluno, CPFProfessor, CodigoDisciplina),
+    FOREIGN KEY (CPFAluno, CPFProfessor, CodigoDisciplina) 
+        REFERENCES FeedBack(CPFAluno, CPFProfessor, CodigoDisciplina),
+    CHECK (RatingProfessor BETWEEN 0 AND 5),
+    CHECK (RatingMaterial BETWEEN 0 AND 5),
+    CHECK (RatingInfraestrutura BETWEEN 0 AND 5),
+    CHECK (RatingRelevancia BETWEEN 0 AND 5)
+);
+
+
 

@@ -15,13 +15,28 @@ Este projeto consiste na modelagem e implementação de um sistema de banco de d
 
 ### ✅ Pré-requisitos
 
-- PostgreSQL instalado e configurado para rodar o banco de dados.
-- JupyterLab para rodar os scripts.
-- Git para clonar o repositório.
+Para executar este projeto, você precisará do **Python 3** instalado em sua máquina, junto com as seguintes bibliotecas:
+
+- `jupyterlab`
+- `sqlalchemy`
+- `psycopg2`
+- `ipython-sql`
+- `ipywidgets`
+
+Você pode instalá-las com o seguinte comando:
+
+```bash
+pip install jupyterlab sqlalchemy psycopg2 ipython-sql ipywidgets
+```
 
 ### 🚀 Passos para execução
- - [EM DESENVOLVIMENTO]
+ - Inicie o jupyter lab
+```bash
+jupyter lab
+```
 
+ - Abra o arquivo [projeto_final.ipynb](documentos/projeto_final.ipynb)
+ - Execute Todas as Células
 
 ## 🔎 Consultas Implementadas
  - [EM DESENVOLVIMENTO]

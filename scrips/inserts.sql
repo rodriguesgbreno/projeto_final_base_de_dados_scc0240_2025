@@ -28,6 +28,39 @@ INSERT INTO Usuario (CPF, NomeUsuario, SobrenomeUsuario, NumeroTelefone, Enderec
 ('77889900123', 'Renata', 'Ferreira', '99987654321', 'Rua AA, 789', 'renata.ferreira@email.com', 'senha2424', '1994-10-02', 'F'),
 ('88990011234', 'Felipe', 'Lima', '11987654321', 'Praça BB, 654', 'felipe.lima@email.com', 'senha2525', '1989-09-15', 'M');
 
+-- A maioria das unidades escolares não vão contem dados
+INSERT INTO UnidadeEscolar (IDEscola, NomeCidade, SiglaEstado, SiglaPais, NumeroPredio) VALUES
+(1, 'São Paulo', 'SP', 'BRA', 'A1'),
+(2, 'Rio de Janeiro', 'RJ', 'BRA', 'B2'),
+(3, 'Belo Horizonte', 'MG', 'BRA', 'C3'),
+(4, 'Curitiba', 'PR', 'BRA', 'D4'),
+(5, 'Porto Alegre', 'RS', 'BRA', 'E5'),
+(6, 'Salvador', 'BA', 'BRA', 'F6'),
+(7, 'Fortaleza', 'CE', 'BRA', 'G7'),
+(8, 'Recife', 'PE', 'BRA', 'H8'),
+(9, 'Brasília', 'DF', 'BRA', 'I9'),
+(10, 'Manaus', 'AM', 'BRA', 'J10'),
+(11, 'Natal', 'RN', 'BRA', 'K11'),
+(12, 'Florianópolis', 'SC', 'BRA', 'L12'),
+(13, 'Maceió', 'AL', 'BRA', 'M13'),
+(14, 'Belém', 'PA', 'BRA', 'N14'),
+(15, 'João Pessoa', 'PB', 'BRA', 'O15'),
+(16, 'Vitória', 'ES', 'BRA', 'P16'),
+(17, 'Goiânia', 'GO', 'BRA', 'Q17'),
+(18, 'Cuiabá', 'MT', 'BRA', 'R18'),
+(19, 'Campo Grande', 'MS', 'BRA', 'S19'),
+(20, 'São Luís', 'MA', 'BRA', 'T20'),
+(21, 'Aracaju', 'SE', 'BRA', 'U21'),
+(22, 'Teresina', 'PI', 'BRA', 'V22'),
+(23, 'Palmas', 'TO', 'BRA', 'W23'),
+(24, 'Rio Branco', 'AC', 'BRA', 'X24'),
+(25, 'Porto Velho', 'RO', 'BRA', 'Y25'),
+(26, 'Boa Vista', 'RR', 'BRA', 'Z26'),
+(27, 'Macapá', 'AP', 'BRA', 'AA27'),
+(28, 'Cabo Frio', 'RJ', 'BRA', 'BB28'),
+(29, 'Angra dos Reis', 'RJ', 'BRA', 'CC29'),
+(30, 'Ilhéus', 'BA', 'BRA', 'DD30');
+
 -- Inserção de Alunos para a Escola 1
 INSERT INTO Aluno (CPFUsuario, Bolsa, IDEscola) VALUES
 ('12345678901', TRUE, 1),
@@ -64,164 +97,7 @@ INSERT INTO Funcionario (CPFUsuario, Operacao) VALUES
 ('77889900123', 'Coordenação'),
 ('88990011234', 'TI');
 
-INSERT INTO UnidadeEscolar (IDEscola, NomeCidade, SiglaEstado, SiglaPais, NumeroPredio) VALUES
-(1, 'São Paulo', 'SP', 'BRA', 'A1'),
-(2, 'Rio de Janeiro', 'RJ', 'BRA', 'B2'),
-(3, 'Belo Horizonte', 'MG', 'BRA', 'C3'),
-(4, 'Curitiba', 'PR', 'BRA', 'D4'),
-(5, 'Porto Alegre', 'RS', 'BRA', 'E5'),
-(6, 'Salvador', 'BA', 'BRA', 'F6'),
-(7, 'Fortaleza', 'CE', 'BRA', 'G7'),
-(8, 'Recife', 'PE', 'BRA', 'H8'),
-(9, 'Brasília', 'DF', 'BRA', 'I9'),
-(10, 'Manaus', 'AM', 'BRA', 'J10'),
-(11, 'Natal', 'RN', 'BRA', 'K11'),
-(12, 'Florianópolis', 'SC', 'BRA', 'L12'),
-(13, 'Maceió', 'AL', 'BRA', 'M13'),
-(14, 'Belém', 'PA', 'BRA', 'N14'),
-(15, 'João Pessoa', 'PB', 'BRA', 'O15'),
-(16, 'Vitória', 'ES', 'BRA', 'P16'),
-(17, 'Goiânia', 'GO', 'BRA', 'Q17'),
-(18, 'Cuiabá', 'MT', 'BRA', 'R18'),
-(19, 'Campo Grande', 'MS', 'BRA', 'S19'),
-(20, 'São Luís', 'MA', 'BRA', 'T20'),
-(21, 'Aracaju', 'SE', 'BRA', 'U21'),
-(22, 'Teresina', 'PI', 'BRA', 'V22'),
-(23, 'Palmas', 'TO', 'BRA', 'W23'),
-(24, 'Rio Branco', 'AC', 'BRA', 'X24'),
-(25, 'Porto Velho', 'RO', 'BRA', 'Y25'),
-(26, 'Boa Vista', 'RR', 'BRA', 'Z26'),
-(27, 'Macapá', 'AP', 'BRA', 'AA27'),
-(28, 'Cabo Frio', 'RJ', 'BRA', 'BB28'),
-(29, 'Angra dos Reis', 'RJ', 'BRA', 'CC29'),
-(30, 'Ilhéus', 'BA', 'BRA', 'DD30');
-
-INSERT INTO Disciplina (Codigo, NomeDisciplina, QTDAulas, MaterialDidatico) VALUES
-('D001', 'Matemática 1', 60, 'Livro de Álgebra'),
-('D002', 'Português 1', 50, 'Gramática e Literatura'),
-('D003', 'Física 1', 40, 'Livro de Física Geral'),
-('D004', 'Química 1', 45, 'Tabela Periódica'),
-('D005', 'História 1', 40, 'Material de Pesquisa'),
-('D006', 'Geografia 1', 30, 'Mapa do Mundo'),
-('D007', 'Biologia 1', 50, 'Guia de Biologia Geral'),
-('D008', 'Matemática 2', 60, 'Livro de Geometria'),
-('D009', 'Português 2', 50, 'Literatura Brasileira'),
-('D010', 'Física 2', 45, 'Termodinâmica e Dinâmica'),
-('D011', 'Química 2', 55, 'Reações Químicas'),
-('D012', 'História 2', 40, 'Fontes Históricas'),
-('D013', 'Geografia 2', 35, 'Geografia Econômica'),
-('D014', 'Biologia 2', 50, 'Células e Genética'),
-('D015', 'Matemática 3', 60, 'Livro de Cálculo'),
-('D016', 'Português 3', 50, 'Língua Portuguesa Avançada'),
-('D017', 'Física 3', 45, 'Eletromagnetismo'),
-('D018', 'Química 3', 50, 'Química Orgânica'),
-('D019', 'História 3', 40, 'História Contemporânea'),
-('D020', 'Geografia 3', 30, 'Geopolítica'),
-('D021', 'Biologia 3', 45, 'Ecologia e Meio Ambiente'),
-('D022', 'Matemática 4', 50, 'Álgebra Linear'),
-('D023', 'Português 4', 50, 'Interpretação de Texto'),
-('D024', 'Física 4', 60, 'Mecânica e Astronomia'),
-('D025', 'Química 4', 45, 'Físico-Química'),
-('D026', 'História 4', 40, 'Revoluções Históricas'),
-('D027', 'Geografia 4', 30, 'Geografia Urbana'),
-('D028', 'Biologia 4', 50, 'Anatomia Humana'),
-('D029', 'Matemática 5', 60, 'Cálculo Diferencial'),
-('D030', 'Português 5', 50, 'Literatura Contemporânea');
-
-INSERT INTO Mensagem (IDMensagem, TextoMensagem) VALUES
-(1, 'Lembre-se de estudar para a prova de Matemática!'),
-(2, 'Novo aviso sobre as aulas de Física.'),
-(3, 'Os exames de Química serão aplicados na próxima semana.'),
-(4, 'Reunião de professores amanhã, às 14h.'),
-(5, 'Aula de Biologia será cancelada hoje.'),
-(6, 'O prazo para entrega do trabalho de História está se aproximando.'),
-(7, 'Aulas de Geografia serão suspensas amanhã.'),
-(8, 'Novo material didático disponível para Matemática 2.'),
-(9, 'Novo conteúdo sobre a Segunda Guerra Mundial será abordado.'),
-(10, 'Aviso: As aulas de Química serão online.'),
-(11, 'O próximo seminário será sobre Ecologia.'),
-(12, 'Nova atividade para os alunos de Física.'),
-(13, 'Palestra sobre Educação Física amanhã.'),
-(14, 'Lembrete sobre a data da apresentação de projetos de História.'),
-(15, 'Novo conteúdo sobre a formação de Bacias Hidrográficas.'),
-(16, 'Atualização de horários de aula para o semestre seguinte.'),
-(17, 'Informações sobre o curso de Português Avançado.'),
-(18, 'Próximo exame de Biologia será em formato de prova prática.'),
-(19, 'Alterações no cronograma de aulas para o semestre.'),
-(20, 'Entrega de trabalhos de Geografia até sexta-feira.'),
-(21, 'Atualização no material didático de Matemática 3.'),
-(22, 'Novo documento disponível para leitura em sala de aula.'),
-(23, 'Reforço na disciplina de Química para alunos em recuperação.'),
-(24, 'Prova de Física será aplicada em duas semanas.'),
-(25, 'Aviso importante sobre a matrícula de alunos no curso de História.'),
-(26, 'Encontro de professores sobre metodologias de ensino.'),
-(27, 'Aulas de Ciências serão focadas em Biologia Molecular.'),
-(28, 'Novo projeto interdisciplinar sobre Geopolítica.'),
-(29, 'Próximo workshop sobre sustentabilidade e meio ambiente.'),
-(30, 'O cronograma de férias foi atualizado.');
-
--- Enviando a mensagem 3 do professor 44556677889 de quimica para varios alunos
-INSERT INTO Comunica (CPFProfessor, CPFAluno, IDMensagem, DataEnvio) VALUES
-('44556677889', '12345678901', 3, '2025-06-16 14:00:00'),
-('44556677889', '23456789012', 3, '2025-06-16 14:00:00'),
-('44556677889', '34567890123', 3, '2025-06-16 14:00:00'),
-('44556677889', '45678901234', 3, '2025-06-16 14:00:00'),
-('44556677889', '56789012345', 3, '2025-06-16 14:00:00'),
-('44556677889', '67890123456', 3, '2025-06-16 14:00:00'),
-('44556677889', '78901234567', 3, '2025-06-16 14:00:00'),
-('44556677889', '89012345678', 3, '2025-06-16 14:00:00'),
-('44556677889', '90123456789', 3, '2025-06-16 14:00:00'),
-('44556677889', '01234567890', 3, '2025-06-16 14:00:00');
-
--- Enviando a mensagem 1 do professor 11223344556 de matematica para 1 aluno
-INSERT INTO Comunica (CPFProfessor, CPFAluno, IDMensagem, DataEnvio) VALUES
-('11223344556', '12345678901', 3, '2025-06-16 14:00:00');
-
-INSERT INTO Avisos (IDAviso, TextoAviso) VALUES
-(1, 'Atenção! Aulas serão suspensas no feriado nacional.'),
-(2, 'Reunião do conselho acadêmico marcada para sexta-feira.'),
-(3, 'Novo horário de atendimento ao público da secretaria.'),
-(4, 'Matrículas abertas para o próximo semestre.'),
-(5, 'Provas de recuperação ocorrerão na próxima semana.'),
-(6, 'Data limite para entrega de documentos é sexta-feira.'),
-(7, 'Alteração no cronograma de férias de verão.'),
-(8, 'Aviso importante sobre a segurança do campus.'),
-(9, 'Curso de extensão em linguagens de programação começando em breve.'),
-(10, 'Encerramento do semestre letivo e início do período de férias.'),
-(11, 'Novo serviço de orientação acadêmica disponível.'),
-(12, 'Projeto de reciclagem no campus está em andamento.'),
-(13, 'Novos cursos de verão disponíveis para inscrição.'),
-(14, 'Alteração na grade de horários do semestre seguinte.'),
-(15, 'Aviso sobre a organização do evento acadêmico.'),
-(16, 'Recadastramento de alunos da pós-graduação obrigatório.'),
-(17, 'Aulas de recuperação em História estão marcadas.'),
-(18, 'Novas regras para o processo de matrícula de veteranos.'),
-(19, 'Informações sobre a colação de grau do próximo mês.'),
-(20, 'Agenda da biblioteca atualizada para este semestre.'),
-(21, 'Mudança no regulamento da prática de esportes no campus.'),
-(22, 'Novos procedimentos para solicitações de transferências.'),
-(23, 'Próximo evento de integração acadêmica será realizado no dia X.'),
-(24, 'Oficina sobre técnicas de estudo para alunos de primeiro ano.'),
-(25, 'Todos os alunos devem preencher a pesquisa de satisfação até sexta-feira.'),
-(26, 'Mudança nos critérios de avaliação para o curso de Direito.'),
-(27, 'Aulas de Filosofia serão concentradas no período da tarde.'),
-(28, 'Novo sistema de agendamento de salas para reuniões de departamentos.'),
-(29, 'Fechamento da matrícula para atividades extracurriculares.'),
-(30, 'Aviso sobre as novas normas para realização de estágios acadêmicos.');
-
--- Funcionario 11223344567 Envia o Aviso 1 para Vários Usuários
-INSERT INTO Notifica (CPFUsuario, CPFFuncionario, IDAviso, DataEnvio) VALUES
-('12345678901', '11223344567', 1, '2025-06-16 10:30:00'),
-('23456789012', '11223344567', 1, '2025-06-16 10:30:00'),
-('34567890123', '11223344567', 1, '2025-06-16 10:30:00'),
-('45678901234', '11223344567', 1, '2025-06-16 10:30:00'),
-('56789012345', '11223344567', 1, '2025-06-16 10:30:00'),
-('67890123456', '11223344567', 1, '2025-06-16 10:30:00'),
-('78901234567', '11223344567', 1, '2025-06-16 10:30:00'),
-('89012345678', '11223344567', 1, '2025-06-16 10:30:00'),
-('90123456789', '11223344567', 1, '2025-06-16 10:30:00'),
-('01234567890', '11223344567', 1, '2025-06-16 10:30:00');
-
+-- Inserção de Professores Chefiando Departamento (Fazer tratamento, pois todo departamento deve ter 1 professor associado)
 INSERT INTO Departamento (SiglaDepartamento, CPFProfessor, NomeDepartamento) VALUES
 ('DEP01', NULL, 'Matemática'),
 ('DEP02', NULL, 'Línguas'),
@@ -306,3 +182,171 @@ INSERT INTO Vinculo (IDEscola, SiglaCurso) VALUES
 (3, 'TC06'), 
 (3, 'TC07'), 
 (3, 'TC08');
+
+INSERT INTO Disciplina (Codigo, NomeDisciplina, QTDAulas, MaterialDidatico) VALUES
+('D001', 'Matemática 1', 60, 'Livro de Álgebra'),
+('D002', 'Português 1', 50, 'Gramática e Literatura'),
+('D003', 'Física 1', 40, 'Livro de Física Geral'),
+('D004', 'Química 1', 45, 'Tabela Periódica'),
+('D005', 'História 1', 40, 'Material de Pesquisa'),
+('D006', 'Geografia 1', 30, 'Mapa do Mundo'),
+('D007', 'Biologia 1', 50, 'Guia de Biologia Geral'),
+('D008', 'Matemática 2', 60, 'Livro de Geometria'),
+('D009', 'Português 2', 50, 'Literatura Brasileira'),
+('D010', 'Física 2', 45, 'Termodinâmica e Dinâmica'),
+('D011', 'Química 2', 55, 'Reações Químicas'),
+('D012', 'História 2', 40, 'Fontes Históricas'),
+('D013', 'Geografia 2', 35, 'Geografia Econômica'),
+('D014', 'Biologia 2', 50, 'Células e Genética'),
+('D015', 'Matemática 3', 60, 'Livro de Cálculo'),
+('D016', 'Português 3', 50, 'Língua Portuguesa Avançada'),
+('D017', 'Física 3', 45, 'Eletromagnetismo'),
+('D018', 'Química 3', 50, 'Química Orgânica'),
+('D019', 'História 3', 40, 'História Contemporânea'),
+('D020', 'Geografia 3', 30, 'Geopolítica'),
+('D021', 'Biologia 3', 45, 'Ecologia e Meio Ambiente'),
+('D022', 'Matemática 4', 50, 'Álgebra Linear'),
+('D023', 'Português 4', 50, 'Interpretação de Texto'),
+('D024', 'Física 4', 60, 'Mecânica e Astronomia'),
+('D025', 'Química 4', 45, 'Físico-Química'),
+('D026', 'História 4', 40, 'Revoluções Históricas'),
+('D027', 'Geografia 4', 30, 'Geografia Urbana'),
+('D028', 'Biologia 4', 50, 'Anatomia Humana'),
+('D029', 'Matemática 5', 60, 'Cálculo Diferencial'),
+('D030', 'Português 5', 50, 'Literatura Contemporânea');
+
+-- As tabelas as seguir não garantem "sentido" entre as disciplinas e cursos
+-- por exemplo, um curso técnico poder conter uma disciplna considerada "fundamental"
+-- por enquanto são apenas dados ilustrativos
+-- ComporCursoDisciplina - Fundamental
+INSERT INTO ComporCursoDisciplina (SiglaCurso, SiglaDisciplina) VALUES
+('FND01', 'D001'),
+('FND01', 'D008'),
+('FND01', 'D015'),
+('FND02', 'D002'),
+('FND02', 'D009'),
+('FND03', 'D005'),
+('FND03', 'D012'),
+('FND04', 'D006'),
+('FND04', 'D013'),
+('FND05', 'D007');
+
+-- ComporCursoDisciplina - Ensino Médio
+INSERT INTO ComporCursoDisciplina (SiglaCurso, SiglaDisciplina) VALUES
+('EM01', 'D015'),
+('EM01', 'D022'),
+('EM02', 'D016'),
+('EM02', 'D023'),
+('EM05', 'D004'),
+('EM05', 'D011'),
+('EM06', 'D003'),
+('EM06', 'D010'),
+('EM09', 'D007'),
+('EM09', 'D014');
+
+-- ComporCursoDisciplina - Técnico
+INSERT INTO ComporCursoDisciplina (SiglaCurso, SiglaDisciplina) VALUES
+('TC01', 'D024'),
+('TC01', 'D001'),
+('TC01', 'D030'),
+('TC02', 'D003'),
+('TC02', 'D004'),
+('TC03', 'D002'),
+('TC03', 'D016'),
+('TC04', 'D007'),
+('TC04', 'D028'),
+('TC09', 'D017');
+
+INSERT INTO Mensagem (IDMensagem, TextoMensagem) VALUES
+(1, 'Lembre-se de estudar para a prova de Matemática!'),
+(2, 'Novo aviso sobre as aulas de Física.'),
+(3, 'Os exames de Química serão aplicados na próxima semana.'),
+(4, 'Reunião de professores amanhã, às 14h.'),
+(5, 'Aula de Biologia será cancelada hoje.'),
+(6, 'O prazo para entrega do trabalho de História está se aproximando.'),
+(7, 'Aulas de Geografia serão suspensas amanhã.'),
+(8, 'Novo material didático disponível para Matemática 2.'),
+(9, 'Novo conteúdo sobre a Segunda Guerra Mundial será abordado.'),
+(10, 'Aviso: As aulas de Química serão online.'),
+(11, 'O próximo seminário será sobre Ecologia.'),
+(12, 'Nova atividade para os alunos de Física.'),
+(13, 'Palestra sobre Educação Física amanhã.'),
+(14, 'Lembrete sobre a data da apresentação de projetos de História.'),
+(15, 'Novo conteúdo sobre a formação de Bacias Hidrográficas.'),
+(16, 'Atualização de horários de aula para o semestre seguinte.'),
+(17, 'Informações sobre o curso de Português Avançado.'),
+(18, 'Próximo exame de Biologia será em formato de prova prática.'),
+(19, 'Alterações no cronograma de aulas para o semestre.'),
+(20, 'Entrega de trabalhos de Geografia até sexta-feira.'),
+(21, 'Atualização no material didático de Matemática 3.'),
+(22, 'Novo documento disponível para leitura em sala de aula.'),
+(23, 'Reforço na disciplina de Química para alunos em recuperação.'),
+(24, 'Prova de Física será aplicada em duas semanas.'),
+(25, 'Aviso importante sobre a matrícula de alunos no curso de História.'),
+(26, 'Encontro de professores sobre metodologias de ensino.'),
+(27, 'Aulas de Ciências serão focadas em Biologia Molecular.'),
+(28, 'Novo projeto interdisciplinar sobre Geopolítica.'),
+(29, 'Próximo workshop sobre sustentabilidade e meio ambiente.'),
+(30, 'O cronograma de férias foi atualizado.');
+
+-- Enviando a mensagem com id 3 do professor 44556677889 de quimica para varios alunos
+INSERT INTO Comunica (CPFProfessor, CPFAluno, IDMensagem, DataEnvio) VALUES
+('44556677889', '12345678901', 3, '2025-06-16 14:00:00'),
+('44556677889', '23456789012', 3, '2025-06-16 14:00:00'),
+('44556677889', '34567890123', 3, '2025-06-16 14:00:00'),
+('44556677889', '45678901234', 3, '2025-06-16 14:00:00'),
+('44556677889', '56789012345', 3, '2025-06-16 14:00:00'),
+('44556677889', '67890123456', 3, '2025-06-16 14:00:00'),
+('44556677889', '78901234567', 3, '2025-06-16 14:00:00'),
+('44556677889', '89012345678', 3, '2025-06-16 14:00:00'),
+('44556677889', '90123456789', 3, '2025-06-16 14:00:00'),
+('44556677889', '01234567890', 3, '2025-06-16 14:00:00');
+
+-- Enviando a mensagem com id 1 do professor 11223344556 de matematica para 1 aluno
+INSERT INTO Comunica (CPFProfessor, CPFAluno, IDMensagem, DataEnvio) VALUES
+('11223344556', '12345678901', 3, '2025-06-16 14:00:00');
+
+INSERT INTO Avisos (IDAviso, TextoAviso) VALUES
+(1, 'Atenção! Aulas serão suspensas no feriado nacional.'),
+(2, 'Reunião do conselho acadêmico marcada para sexta-feira.'),
+(3, 'Novo horário de atendimento ao público da secretaria.'),
+(4, 'Matrículas abertas para o próximo semestre.'),
+(5, 'Provas de recuperação ocorrerão na próxima semana.'),
+(6, 'Data limite para entrega de documentos é sexta-feira.'),
+(7, 'Alteração no cronograma de férias de verão.'),
+(8, 'Aviso importante sobre a segurança do campus.'),
+(9, 'Curso de extensão em linguagens de programação começando em breve.'),
+(10, 'Encerramento do semestre letivo e início do período de férias.'),
+(11, 'Novo serviço de orientação acadêmica disponível.'),
+(12, 'Projeto de reciclagem no campus está em andamento.'),
+(13, 'Novos cursos de verão disponíveis para inscrição.'),
+(14, 'Alteração na grade de horários do semestre seguinte.'),
+(15, 'Aviso sobre a organização do evento acadêmico.'),
+(16, 'Recadastramento de alunos da pós-graduação obrigatório.'),
+(17, 'Aulas de recuperação em História estão marcadas.'),
+(18, 'Novas regras para o processo de matrícula de veteranos.'),
+(19, 'Informações sobre a colação de grau do próximo mês.'),
+(20, 'Agenda da biblioteca atualizada para este semestre.'),
+(21, 'Mudança no regulamento da prática de esportes no campus.'),
+(22, 'Novos procedimentos para solicitações de transferências.'),
+(23, 'Próximo evento de integração acadêmica será realizado no dia X.'),
+(24, 'Oficina sobre técnicas de estudo para alunos de primeiro ano.'),
+(25, 'Todos os alunos devem preencher a pesquisa de satisfação até sexta-feira.'),
+(26, 'Mudança nos critérios de avaliação para o curso de Direito.'),
+(27, 'Aulas de Filosofia serão concentradas no período da tarde.'),
+(28, 'Novo sistema de agendamento de salas para reuniões de departamentos.'),
+(29, 'Fechamento da matrícula para atividades extracurriculares.'),
+(30, 'Aviso sobre as novas normas para realização de estágios acadêmicos.');
+
+-- Funcionario 11223344567 Envia o Aviso com id 1 para Vários Usuários
+INSERT INTO Notifica (CPFUsuario, CPFFuncionario, IDAviso, DataEnvio) VALUES
+('12345678901', '11223344567', 1, '2025-06-16 10:30:00'),
+('23456789012', '11223344567', 1, '2025-06-16 10:30:00'),
+('34567890123', '11223344567', 1, '2025-06-16 10:30:00'),
+('45678901234', '11223344567', 1, '2025-06-16 10:30:00'),
+('56789012345', '11223344567', 1, '2025-06-16 10:30:00'),
+('67890123456', '11223344567', 1, '2025-06-16 10:30:00'),
+('78901234567', '11223344567', 1, '2025-06-16 10:30:00'),
+('89012345678', '11223344567', 1, '2025-06-16 10:30:00'),
+('90123456789', '11223344567', 1, '2025-06-16 10:30:00'),
+('01234567890', '11223344567', 1, '2025-06-16 10:30:00');
