@@ -51,7 +51,7 @@ jupyter lab
 ### 📝 Modelagem
  - Arquivo para visualizar no [Diagrams.net](https://app.diagrams.net/)
  - [AQUI](documentos/der_sistema_gestao_escolar)
-    - 1ª Página = Diagrama
+    - 1ª Página = Diagrama Entidade Relacionamento
     - 2ª Página = Modelo Relacional
 
 ### 📝 Atividades Realizadas

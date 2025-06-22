@@ -104,6 +104,47 @@ CREATE TABLE MinistraAula (
     FOREIGN KEY (CodigoDisciplina) REFERENCES Disciplina(Codigo)
 );
 
+-- Tabela OfertaDisciplina
+CREATE TABLE OfertaDisciplina (
+    CodigoDisciplina CHAR(10),
+    CPFProfessor CHAR(11),
+    Dia VARCHAR(20),
+    Hora TIME,
+    Sala VARCHAR(50),
+    PRIMARY KEY (CodigoDisciplina, CPFProfessor, Dia, Hora, Sala),
+    FOREIGN KEY (CodigoDisciplina) REFERENCES Disciplina(Codigo),
+    FOREIGN KEY (CPFProfessor) REFERENCES Professor(CPFUsuario)
+);
+
+-- Tabela Matricula de Alunos em OfertaDisciplina
+CREATE TABLE Matricula (
+    CPFAluno CHAR(11),
+    CodigoDisciplina CHAR(10),
+    CPFProfessor CHAR(11),
+    Dia VARCHAR(20),
+    Hora TIME,
+    Sala VARCHAR(50),
+    PRIMARY KEY (CPFAluno, CodigoDisciplina, CPFProfessor, Dia, Hora, Sala),
+    FOREIGN KEY (CPFAluno) REFERENCES Aluno(CPFUsuario),
+    FOREIGN KEY (CodigoDisciplina, CPFProfessor, Dia, Hora, Sala)
+        REFERENCES OfertaDisciplina(CodigoDisciplina, CPFProfessor, Dia, Hora, Sala)
+);
+
+-- Tabela de Inscricao de Matrículas em Disciplinas Ofertadas
+CREATE TABLE Inscricao (
+    DataInscricao TIMESTAMP,
+    CPFAluno CHAR(11),
+    CodigoDisciplina CHAR(10),
+    CPFProfessor CHAR(11),
+    Dia VARCHAR(20),
+    Hora TIME,
+    Sala VARCHAR(50),
+    Notas VARCHAR (20),
+    PRIMARY KEY (DataInscricao, CPFAluno, CodigoDisciplina, CPFProfessor, Dia, Hora, Sala),
+    FOREIGN KEY (CPFAluno, CodigoDisciplina, CPFProfessor, Dia, Hora, Sala)
+        REFERENCES Matricula(CPFAluno, CodigoDisciplina, CPFProfessor, Dia, Hora, Sala)
+);
+
 -- Tabela PreRequisitoDisciplina
 CREATE TABLE PreRequisitoDisciplina (
     SiglaCurso CHAR(10),
@@ -168,46 +209,6 @@ CREATE TABLE Notifica (
     FOREIGN KEY (IDAviso) REFERENCES Avisos(IDAviso)
 );
 
--- Tabela OfertaDisciplina
-CREATE TABLE OfertaDisciplina (
-    CodigoDisciplina CHAR(10),
-    CPFProfessor CHAR(11),
-    Dia VARCHAR(20),
-    Hora TIME,
-    Sala VARCHAR(20),
-    PRIMARY KEY (CodigoDisciplina, CPFProfessor, Dia, Hora, Sala),
-    FOREIGN KEY (CodigoDisciplina) REFERENCES Disciplina(Codigo),
-    FOREIGN KEY (CPFProfessor) REFERENCES Professor(CPFUsuario)
-);
-
--- Tabela Matricula de Alunos em OfertaDisciplina
-CREATE TABLE Matricula (
-    CPFAluno CHAR(11),
-    CodigoDisciplina CHAR(10),
-    CPFProfessor CHAR(11),
-    Dia VARCHAR(20),
-    Hora TIME,
-    Sala VARCHAR(20),
-    PRIMARY KEY (CPFAluno, CodigoDisciplina, CPFProfessor, Dia, Hora, Sala),
-    FOREIGN KEY (CPFAluno) REFERENCES Aluno(CPFUsuario),
-    FOREIGN KEY (CodigoDisciplina, CPFProfessor, Dia, Hora, Sala)
-        REFERENCES OfertaDisciplina(CodigoDisciplina, CPFProfessor, Dia, Hora, Sala)
-);
-
--- Tabela de Inscricao de Matrículas em Disciplinas Ofertadas
-CREATE TABLE Inscricao (
-    DataInscricao TIMESTAMP,
-    CPFAluno CHAR(11),
-    CodigoDisciplina CHAR(10),
-    CPFProfessor CHAR(11),
-    Dia VARCHAR(20),
-    Hora TIME,
-    Sala VARCHAR(20),
-    PRIMARY KEY (DataInscricao, CPFAluno, CodigoDisciplina, CPFProfessor, Dia, Hora, Sala),
-    FOREIGN KEY (CPFAluno, CodigoDisciplina, CPFProfessor, Dia, Hora, Sala)
-        REFERENCES Matricula(CPFAluno, CodigoDisciplina, CPFProfessor, Dia, Hora, Sala)
-);
-
 -- Tabela Feedback
 CREATE TABLE FeedBack (
     CPFAluno VARCHAR(11),
@@ -220,6 +221,7 @@ CREATE TABLE FeedBack (
 );
 
 -- Tabela Avaliacao
+-- De acordo com nosso modelo, qualquer aluno pode fazer avaliação de uma disciplina, mesmo se ele não estiver matriculado nele
 CREATE TABLE Avaliacao (
     DataAvaliacao TIMESTAMP,
     CPFAluno VARCHAR(11),

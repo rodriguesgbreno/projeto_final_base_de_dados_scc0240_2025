@@ -350,3 +350,289 @@ INSERT INTO Notifica (CPFUsuario, CPFFuncionario, IDAviso, DataEnvio) VALUES
 ('89012345678', '11223344567', 1, '2025-06-16 10:30:00'),
 ('90123456789', '11223344567', 1, '2025-06-16 10:30:00'),
 ('01234567890', '11223344567', 1, '2025-06-16 10:30:00');
+
+-- Professores ministrando aulas de acordo com suas áreas de especialidade
+-- Professores de Matemática
+INSERT INTO MinistraAula (CPFProfessor, CodigoDisciplina) VALUES
+('11223344556', 'D001'),  -- Matemática 1
+('11223344556', 'D008'),  -- Matemática 2
+('11223344556', 'D015'),  -- Matemática 3
+('11223344556', 'D022'),  -- Matemática 4
+('11223344556', 'D029'),  -- Matemática 5
+('88990011223', 'D008'),  -- Matemática 2
+('88990011223', 'D015'),  -- Matemática 3
+('88990011223', 'D022'),  -- Matemática 4
+('88990011223', 'D029');  -- Matemática 5
+
+-- Professores de Português
+INSERT INTO MinistraAula (CPFProfessor, CodigoDisciplina) VALUES
+('22334455667', 'D002'),  -- Português 1
+('22334455667', 'D009'),  -- Português 2
+('22334455667', 'D016'),  -- Português 3
+('22334455667', 'D023'),  -- Português 4
+('22334455667', 'D030'),  -- Português 5
+('99001122334', 'D002'),  -- Português 1
+('99001122334', 'D009'),  -- Português 2
+('99001122334', 'D016'),  -- Português 3
+('99001122334', 'D023'),  -- Português 4
+('99001122334', 'D030');  -- Português 5
+
+-- Professores de Física
+INSERT INTO MinistraAula (CPFProfessor, CodigoDisciplina) VALUES
+('33445566778', 'D003'),  -- Física 1
+('33445566778', 'D010'),  -- Física 2
+('33445566778', 'D017'),  -- Física 3
+('33445566778', 'D024'),  -- Física 4
+('10112233445', 'D003'),  -- Física 1
+('10112233445', 'D010'),  -- Física 2
+('10112233445', 'D017'),  -- Física 3
+('10112233445', 'D024');  -- Física 4
+
+-- Professores de Química
+INSERT INTO MinistraAula (CPFProfessor, CodigoDisciplina) VALUES
+('44556677889', 'D004'),  -- Química 1
+('44556677889', 'D011'),  -- Química 2
+('44556677889', 'D018'),  -- Química 3
+('44556677889', 'D025');  -- Química 4
+
+-- Professores de História
+INSERT INTO MinistraAula (CPFProfessor, CodigoDisciplina) VALUES
+('55667788990', 'D005'),  -- História 1
+('55667788990', 'D012'),  -- História 2
+('55667788990', 'D019'),  -- História 3
+('55667788990', 'D026');  -- História 4
+
+-- Professores de Geografia
+INSERT INTO MinistraAula (CPFProfessor, CodigoDisciplina) VALUES
+('66778899001', 'D006'),  -- Geografia 1
+('66778899001', 'D013'),  -- Geografia 2
+('66778899001', 'D020'),  -- Geografia 3
+('66778899001', 'D027');  -- Geografia 4
+
+-- Professores de Biologia
+INSERT INTO MinistraAula (CPFProfessor, CodigoDisciplina) VALUES
+('77889900112', 'D007'),  -- Biologia 1
+('77889900112', 'D014'),  -- Biologia 2
+('77889900112', 'D021'),  -- Biologia 3
+('77889900112', 'D028');  -- Biologia 4
+
+-- Ofertas de disciplinas para todos os professores que ministram aulas
+-- Professor 11223344556 - Matemática
+INSERT INTO OfertaDisciplina (CodigoDisciplina, CPFProfessor, Dia, Hora, Sala) VALUES
+('D001', '11223344556', 'Segunda-feira', '10:00:00', 'Sala 101'),
+('D008', '11223344556', 'Terça-feira', '08:00:00', 'Sala 102'),
+('D015', '11223344556', 'Quarta-feira', '14:00:00', 'Sala 103'),
+('D022', '11223344556', 'Quinta-feira', '16:00:00', 'Sala 104'),
+('D029', '11223344556', 'Sexta-feira', '10:00:00', 'Sala 105');
+
+-- Professor 88990011223 - Matemática
+INSERT INTO OfertaDisciplina (CodigoDisciplina, CPFProfessor, Dia, Hora, Sala) VALUES
+('D008', '88990011223', 'Segunda-feira', '14:00:00', 'Sala 201'),
+('D015', '88990011223', 'Terça-feira', '10:00:00', 'Sala 202'),
+('D022', '88990011223', 'Quarta-feira', '08:00:00', 'Sala 203'),
+('D029', '88990011223', 'Quinta-feira', '14:00:00', 'Sala 204');
+
+-- Professor 22334455667 - Português
+INSERT INTO OfertaDisciplina (CodigoDisciplina, CPFProfessor, Dia, Hora, Sala) VALUES
+('D002', '22334455667', 'Segunda-feira', '08:00:00', 'Sala 301'),
+('D009', '22334455667', 'Terça-feira', '14:00:00', 'Sala 302'),
+('D016', '22334455667', 'Quarta-feira', '10:00:00', 'Sala 303'),
+('D023', '22334455667', 'Quinta-feira', '16:00:00', 'Sala 304'),
+('D030', '22334455667', 'Sexta-feira', '08:00:00', 'Sala 305');
+
+-- Professor 99001122334 - Português
+INSERT INTO OfertaDisciplina (CodigoDisciplina, CPFProfessor, Dia, Hora, Sala) VALUES
+('D002', '99001122334', 'Segunda-feira', '16:00:00', 'Sala 401'),
+('D009', '99001122334', 'Terça-feira', '08:00:00', 'Sala 402'),
+('D016', '99001122334', 'Quarta-feira', '14:00:00', 'Sala 403'),
+('D023', '99001122334', 'Quinta-feira', '10:00:00', 'Sala 404'),
+('D030', '99001122334', 'Sexta-feira', '14:00:00', 'Sala 405');
+
+-- Professor 33445566778 - Física
+INSERT INTO OfertaDisciplina (CodigoDisciplina, CPFProfessor, Dia, Hora, Sala) VALUES
+('D003', '33445566778', 'Segunda-feira', '14:00:00', 'Laboratório 1'),
+('D010', '33445566778', 'Terça-feira', '10:00:00', 'Laboratório 2'),
+('D017', '33445566778', 'Quarta-feira', '16:00:00', 'Laboratório 3'),
+('D024', '33445566778', 'Quinta-feira', '08:00:00', 'Laboratório 4');
+
+-- Professor 10112233445 - Física
+INSERT INTO OfertaDisciplina (CodigoDisciplina, CPFProfessor, Dia, Hora, Sala) VALUES
+('D003', '10112233445', 'Segunda-feira', '08:00:00', 'Laboratório 5'),
+('D010', '10112233445', 'Terça-feira', '16:00:00', 'Laboratório 6'),
+('D017', '10112233445', 'Quarta-feira', '10:00:00', 'Laboratório 7'),
+('D024', '10112233445', 'Quinta-feira', '14:00:00', 'Laboratório 8');
+
+-- Professor 44556677889 - Química
+INSERT INTO OfertaDisciplina (CodigoDisciplina, CPFProfessor, Dia, Hora, Sala) VALUES
+('D004', '44556677889', 'Segunda-feira', '10:00:00', 'Laboratório Química 1'),
+('D011', '44556677889', 'Terça-feira', '14:00:00', 'Laboratório Química 2'),
+('D018', '44556677889', 'Quarta-feira', '08:00:00', 'Laboratório Química 3'),
+('D025', '44556677889', 'Quinta-feira', '16:00:00', 'Laboratório Química 4');
+
+-- Professor 55667788990 - História
+INSERT INTO OfertaDisciplina (CodigoDisciplina, CPFProfessor, Dia, Hora, Sala) VALUES
+('D005', '55667788990', 'Segunda-feira', '16:00:00', 'Sala 501'),
+('D012', '55667788990', 'Terça-feira', '08:00:00', 'Sala 502'),
+('D019', '55667788990', 'Quarta-feira', '14:00:00', 'Sala 503'),
+('D026', '55667788990', 'Quinta-feira', '10:00:00', 'Sala 504');
+
+-- Professor 66778899001 - Geografia
+INSERT INTO OfertaDisciplina (CodigoDisciplina, CPFProfessor, Dia, Hora, Sala) VALUES
+('D006', '66778899001', 'Segunda-feira', '08:00:00', 'Sala 601'),
+('D013', '66778899001', 'Terça-feira', '16:00:00', 'Sala 602'),
+('D020', '66778899001', 'Quarta-feira', '10:00:00', 'Sala 603'),
+('D027', '66778899001', 'Quinta-feira', '14:00:00', 'Sala 604');
+
+-- Professor 77889900112 - Biologia
+INSERT INTO OfertaDisciplina (CodigoDisciplina, CPFProfessor, Dia, Hora, Sala) VALUES
+('D007', '77889900112', 'Segunda-feira', '14:00:00', 'Laboratório Biologia 1'),
+('D014', '77889900112', 'Terça-feira', '10:00:00', 'Laboratório Biologia 2'),
+('D021', '77889900112', 'Quarta-feira', '16:00:00', 'Laboratório Biologia 3'),
+('D028', '77889900112', 'Quinta-feira', '08:00:00', 'Laboratório Biologia 4');
+
+-- Alunos fazendo feedback de acordo com suas disciplinas para um professor
+INSERT INTO FeedBack (CPFAluno, CPFProfessor, CodigoDisciplina) VALUES
+('12345678901', '11223344556', 'D001'),
+('23456789012', '11223344556', 'D001'),
+('34567890123', '11223344556', 'D001'),
+('56789012345', '11223344556', 'D001'),
+('89012345678', '11223344556', 'D001'),
+('01234567890', '11223344556', 'D001');
+
+-- Alunos avaliam o professor 11223344556 na disciplina de matematica 1
+INSERT INTO Avaliacao (DataAvaliacao, CPFAluno, CPFProfessor, CodigoDisciplina, RatingProfessor, RatingMaterial, RatingInfraestrutura, RatingRelevancia, Comentario) VALUES
+('2025-06-16 10:00:00', '12345678901', '11223344556', 'D001', 5, 4, 5, 5, 'Excelente professor! Consegue explicar conceitos complexos de forma simples e clara. As aulas são muito dinâmicas e o material é bem organizado.'),
+('2025-06-16 09:00:00', '23456789012', '11223344556', 'D001', 4, 4, 4, 5, 'Bom professor, explica bem os conceitos matemáticos. O material é adequado e as aulas são produtivas.'),
+('2025-06-16 08:15:00', '34567890123', '11223344556', 'D001', 2, 3, 4, 4, 'O professor tem conhecimento, mas não consegue se comunicar bem com a turma. As aulas são monótonas.'),
+('2025-06-16 08:45:00', '56789012345', '11223344556', 'D001', 5, 4, 5, 5, 'Matemática sempre foi meu ponto fraco, mas este professor conseguiu mudar isso. Excelente metodologia!'),
+('2025-06-16 12:30:00', '89012345678', '11223344556', 'D001', 4, 4, 5, 4, 'Matemática é fundamental e o professor consegue transmitir isso de forma clara. Bom material didático.'),
+('2025-06-16 09:00:00', '01234567890', '11223344556', 'D001', 3, 4, 4, 4, 'Matemática é desafiadora, mas o professor tenta simplificar. Poderia ter mais exercícios práticos.');
+
+-- Matrículas dos alunos em diferentes disciplinas
+-- Aluno 12345678901
+INSERT INTO Matricula (CPFAluno, CodigoDisciplina, CPFProfessor, Dia, Hora, Sala) VALUES
+('12345678901', 'D001', '11223344556', 'Segunda-feira', '10:00:00', 'Sala 101'),
+('12345678901', 'D002', '22334455667', 'Segunda-feira', '08:00:00', 'Sala 301'),
+('12345678901', 'D003', '33445566778', 'Segunda-feira', '14:00:00', 'Laboratório 1'),
+('12345678901', 'D004', '44556677889', 'Segunda-feira', '10:00:00', 'Laboratório Química 1');
+
+-- Aluno 23456789012
+INSERT INTO Matricula (CPFAluno, CodigoDisciplina, CPFProfessor, Dia, Hora, Sala) VALUES
+('23456789012', 'D001', '11223344556', 'Segunda-feira', '10:00:00', 'Sala 101'),
+('23456789012', 'D005', '55667788990', 'Segunda-feira', '16:00:00', 'Sala 501'),
+('23456789012', 'D006', '66778899001', 'Segunda-feira', '08:00:00', 'Sala 601'),
+('23456789012', 'D007', '77889900112', 'Segunda-feira', '14:00:00', 'Laboratório Biologia 1');
+
+-- Aluno 34567890123
+INSERT INTO Matricula (CPFAluno, CodigoDisciplina, CPFProfessor, Dia, Hora, Sala) VALUES
+('34567890123', 'D001', '11223344556', 'Segunda-feira', '10:00:00', 'Sala 101'),
+('34567890123', 'D003', '33445566778', 'Segunda-feira', '14:00:00', 'Laboratório 1'),
+('34567890123', 'D008', '11223344556', 'Terça-feira', '08:00:00', 'Sala 102'),
+('34567890123', 'D009', '22334455667', 'Terça-feira', '14:00:00', 'Sala 302');
+
+-- Aluno 45678901234
+INSERT INTO Matricula (CPFAluno, CodigoDisciplina, CPFProfessor, Dia, Hora, Sala) VALUES
+('45678901234', 'D002', '22334455667', 'Segunda-feira', '08:00:00', 'Sala 301'),
+('45678901234', 'D005', '55667788990', 'Segunda-feira', '16:00:00', 'Sala 501'),
+('45678901234', 'D010', '33445566778', 'Terça-feira', '10:00:00', 'Laboratório 2'),
+('45678901234', 'D011', '44556677889', 'Terça-feira', '14:00:00', 'Laboratório Química 2');
+
+-- Aluno 56789012345
+INSERT INTO Matricula (CPFAluno, CodigoDisciplina, CPFProfessor, Dia, Hora, Sala) VALUES
+('56789012345', 'D001', '11223344556', 'Segunda-feira', '10:00:00', 'Sala 101'),
+('56789012345', 'D003', '33445566778', 'Segunda-feira', '14:00:00', 'Laboratório 1'),
+('56789012345', 'D004', '44556677889', 'Segunda-feira', '10:00:00', 'Laboratório Química 1'),
+('56789012345', 'D005', '55667788990', 'Segunda-feira', '16:00:00', 'Sala 501');
+
+-- Aluno 67890123456
+INSERT INTO Matricula (CPFAluno, CodigoDisciplina, CPFProfessor, Dia, Hora, Sala) VALUES
+('67890123456', 'D002', '22334455667', 'Segunda-feira', '08:00:00', 'Sala 301'),
+('67890123456', 'D006', '66778899001', 'Segunda-feira', '08:00:00', 'Sala 601'),
+('67890123456', 'D007', '77889900112', 'Segunda-feira', '14:00:00', 'Laboratório Biologia 1'),
+('67890123456', 'D008', '11223344556', 'Terça-feira', '08:00:00', 'Sala 102');
+
+-- Aluno 78901234567
+INSERT INTO Matricula (CPFAluno, CodigoDisciplina, CPFProfessor, Dia, Hora, Sala) VALUES
+('78901234567', 'D003', '33445566778', 'Segunda-feira', '14:00:00', 'Laboratório 1'),
+('78901234567', 'D004', '44556677889', 'Segunda-feira', '10:00:00', 'Laboratório Química 1'),
+('78901234567', 'D005', '55667788990', 'Segunda-feira', '16:00:00', 'Sala 501'),
+('78901234567', 'D009', '22334455667', 'Terça-feira', '14:00:00', 'Sala 302');
+
+-- Aluno 89012345678
+INSERT INTO Matricula (CPFAluno, CodigoDisciplina, CPFProfessor, Dia, Hora, Sala) VALUES
+('89012345678', 'D001', '11223344556', 'Segunda-feira', '10:00:00', 'Sala 101'),
+('89012345678', 'D007', '77889900112', 'Segunda-feira', '14:00:00', 'Laboratório Biologia 1'),
+('89012345678', 'D010', '33445566778', 'Terça-feira', '10:00:00', 'Laboratório 2'),
+('89012345678', 'D012', '55667788990', 'Terça-feira', '08:00:00', 'Sala 502');
+
+-- Aluno 90123456789
+INSERT INTO Matricula (CPFAluno, CodigoDisciplina, CPFProfessor, Dia, Hora, Sala) VALUES
+('90123456789', 'D004', '44556677889', 'Segunda-feira', '10:00:00', 'Laboratório Química 1'),
+('90123456789', 'D005', '55667788990', 'Segunda-feira', '16:00:00', 'Sala 501'),
+('90123456789', 'D006', '66778899001', 'Segunda-feira', '08:00:00', 'Sala 601'),
+('90123456789', 'D007', '77889900112', 'Segunda-feira', '14:00:00', 'Laboratório Biologia 1');
+
+-- Aluno 01234567890
+INSERT INTO Matricula (CPFAluno, CodigoDisciplina, CPFProfessor, Dia, Hora, Sala) VALUES
+('01234567890', 'D001', '11223344556', 'Segunda-feira', '10:00:00', 'Sala 101'),
+('01234567890', 'D002', '22334455667', 'Segunda-feira', '08:00:00', 'Sala 301'),
+('01234567890', 'D003', '33445566778', 'Segunda-feira', '14:00:00', 'Laboratório 1'),
+('01234567890', 'D004', '44556677889', 'Segunda-feira', '10:00:00', 'Laboratório Química 1');
+
+-- Inscrições dos alunos (nem todas as matrículas têm inscrição)
+-- Aluno 12345678901
+INSERT INTO Inscricao VALUES
+('2024-01-25 09:00:00', '12345678901', 'D001', '11223344556', 'Segunda-feira', '10:00:00', 'Sala 101', '8.5,9.0,8.7'),
+('2024-01-25 09:15:00', '12345678901', 'D002', '22334455667', 'Segunda-feira', '08:00:00', 'Sala 301', '9.0'),
+('2024-01-25 09:30:00', '12345678901', 'D003', '33445566778', 'Segunda-feira', '14:00:00', 'Laboratório 1', '7.8,8.2');
+
+-- Aluno 23456789012
+INSERT INTO Inscricao VALUES
+('2024-01-25 10:00:00', '23456789012', 'D001', '11223344556', 'Segunda-feira', '10:00:00', 'Sala 101', '8.2,8.5'),
+('2024-01-25 10:15:00', '23456789012', 'D005', '55667788990', 'Segunda-feira', '16:00:00', 'Sala 501', '9.5');
+
+-- Aluno 34567890123
+INSERT INTO Inscricao VALUES
+('2024-01-25 11:00:00', '34567890123', 'D001', '11223344556', 'Segunda-feira', '10:00:00', 'Sala 101', '7.5'),
+('2024-01-25 11:15:00', '34567890123', 'D003', '33445566778', 'Segunda-feira', '14:00:00', 'Laboratório 1', '8.8,8.5,8.6'),
+('2024-01-25 11:30:00', '34567890123', 'D008', '11223344556', 'Terça-feira', '08:00:00', 'Sala 102', '9.2,9.0'),
+('2024-01-25 11:45:00', '34567890123', 'D009', '22334455667', 'Terça-feira', '14:00:00', 'Sala 302', '8.0');
+
+-- Aluno 45678901234
+INSERT INTO Inscricao VALUES
+('2024-01-25 12:00:00', '45678901234', 'D002', '22334455667', 'Segunda-feira', '08:00:00', 'Sala 301', '8.7,8.9'),
+('2024-01-25 12:15:00', '45678901234', 'D005', '55667788990', 'Segunda-feira', '16:00:00', 'Sala 501', '9.1'),
+('2024-01-25 12:30:00', '45678901234', 'D010', '33445566778', 'Terça-feira', '10:00:00', 'Laboratório 2', '7.9,8.0');
+
+-- Aluno 56789012345
+INSERT INTO Inscricao VALUES
+('2024-01-25 13:00:00', '56789012345', 'D001', '11223344556', 'Segunda-feira', '10:00:00', 'Sala 101', '8.9,9.1'),
+('2024-01-25 13:15:00', '56789012345', 'D005', '55667788990', 'Segunda-feira', '16:00:00', 'Sala 501', '8.3');
+
+-- Aluno 67890123456
+INSERT INTO Inscricao VALUES
+('2024-01-25 14:00:00', '67890123456', 'D007', '77889900112', 'Segunda-feira', '14:00:00', 'Laboratório Biologia 1', '9.3');
+
+-- Aluno 78901234567
+INSERT INTO Inscricao VALUES
+('2024-01-25 15:00:00', '78901234567', 'D003', '33445566778', 'Segunda-feira', '14:00:00', 'Laboratório 1', '8.1'),
+('2024-01-25 15:15:00', '78901234567', 'D004', '44556677889', 'Segunda-feira', '10:00:00', 'Laboratório Química 1', '8.6,8.4'),
+('2024-01-25 15:30:00', '78901234567', 'D005', '55667788990', 'Segunda-feira', '16:00:00', 'Sala 501', '9.0');
+
+-- Aluno 89012345678
+INSERT INTO Inscricao VALUES
+('2024-01-25 16:00:00', '89012345678', 'D001', '11223344556', 'Segunda-feira', '10:00:00', 'Sala 101', '7.8,7.9'),
+('2024-01-25 16:15:00', '89012345678', 'D010', '33445566778', 'Terça-feira', '10:00:00', 'Laboratório 2', '8.4');
+
+-- Aluno 90123456789
+INSERT INTO Inscricao VALUES
+('2024-01-25 17:00:00', '90123456789', 'D005', '55667788990', 'Segunda-feira', '16:00:00', 'Sala 501', '8.7');
+
+-- Aluno 01234567890
+INSERT INTO Inscricao VALUES
+('2024-01-25 18:00:00', '01234567890', 'D001', '11223344556', 'Segunda-feira', '10:00:00', 'Sala 101', '8.2'),
+('2024-01-25 18:15:00', '01234567890', 'D002', '22334455667', 'Segunda-feira', '08:00:00', 'Sala 301', '9.1,9.0'),
+('2024-01-25 18:30:00', '01234567890', 'D003', '33445566778', 'Segunda-feira', '14:00:00', 'Laboratório 1', '7.9,8.1,8.0');
+
+
+
