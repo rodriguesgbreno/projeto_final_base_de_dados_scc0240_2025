@@ -39,9 +39,13 @@ jupyter lab
  - Execute Todas as Células
 
 ## 🔎 Consultas Implementadas
- - [EM DESENVOLVIMENTO]
- - [EM DESENVOLVIMENTO]
- - [EM DESENVOLVIMENTO]
+ - Consulta para calcular a média de notas de uma disciplina específica
+ - Consulta para listar os alunos matriculados em uma disciplina específica
+ - Consulta para calcular a média do Rating sobre um professor específico
+ - Consulta para listar as inscrições de um aluno específico em um intervalo de datas
+ - Consultar os comentários sobre um professor com rating < 3
+ - Consultar a área de especialização dos professores de um determinado departamento
+ - Consultar os horários de aulas para um determinado professor
 
 ## 🗂️ Documentos e Links Necessários
 
