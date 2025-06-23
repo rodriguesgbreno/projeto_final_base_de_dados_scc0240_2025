@@ -13,13 +13,6 @@ SELECT
 FROM NotasSeparadas
 GROUP BY CPFAluno;
 
--- Como Usar:
--- Ver a média de todos os alunos
---SELECT * FROM MediaNotasPorAluno;
-
--- Ver a média de um aluno específico
---SELECT * FROM MediaNotasPorAluno WHERE CPFAluno = '12345678901';
-
 -- View para calcular a média de notas por disciplina
 CREATE VIEW MediaNotasPorDisciplina AS
 WITH NotasSeparadas AS (
@@ -34,8 +27,6 @@ SELECT
     ROUND(AVG(nota), 2) AS media_notas
 FROM NotasSeparadas
 GROUP BY CodigoDisciplina;
-
---SELECT * FROM MediaNotasPorDisciplina WHERE CodigoDisciplina = 'D001';
 
 -- View para listar todos os cursos com suas informações completas
 CREATE VIEW ViewCursosCompletos AS
@@ -91,6 +82,14 @@ LEFT JOIN Aluno a ON u.CPF = a.CPFUsuario
 LEFT JOIN Professor p ON u.CPF = p.CPFUsuario
 LEFT JOIN Funcionario f ON u.CPF = f.CPFUsuario;
 
+
+-- Outras Views
+
+-- Criar uma visão para permitir somente que dado algum usuário, 
+-- ele só possa ser de apenas um tipo, exemplo: um usuário só pode ser aluno e não professor e funcionário ao mesmo tempo.
+
+-- Criar uma visão para impedir que um aluno se inscreva em uma 
+-- determinada disciplina com mesmo horário igual a outra disciplina
 
 
 

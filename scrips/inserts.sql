@@ -97,18 +97,18 @@ INSERT INTO Funcionario (CPFUsuario, Operacao) VALUES
 ('77889900123', 'Coordenação'),
 ('88990011234', 'TI');
 
--- Inserção de Professores Chefiando Departamento (Fazer tratamento, pois todo departamento deve ter 1 professor associado)
+-- Inserção de Professores Chefiando Departamento
 INSERT INTO Departamento (SiglaDepartamento, CPFProfessor, NomeDepartamento) VALUES
-('DEP01', NULL, 'Matemática'),
-('DEP02', NULL, 'Línguas'),
-('DEP03', NULL, 'Informática'),
-('DEP04', NULL, 'Administração'),
-('DEP05', NULL, 'Engenharia'),
-('DEP06', NULL, 'Ciências Exatas'),
-('DEP07', NULL, 'Ciências Humanas'),
-('DEP08', NULL, 'Saúde'),
-('DEP09', NULL, 'Artes'),
-('DEP10', NULL, 'Educação Física');
+('DEP01', '11223344556', 'Matemática'),
+('DEP02', '22334455667', 'Línguas'),
+('DEP03', '88990011223', 'Informática'),
+('DEP04', '66778899001', 'Administração'),
+('DEP05', '44556677889', 'Engenharia'),
+('DEP06', '33445566778', 'Ciências Exatas'),
+('DEP07', '55667788990', 'Ciências Humanas'),
+('DEP08', '77889900112', 'Saúde'),
+('DEP09', '99001122334', 'Artes'),
+('DEP10', '10112233445', 'Educação Física');
 
 INSERT INTO Curso (SiglaCurso, SiglaDepartamento, NomeCurso, Classificacao, CargaHoraria, NumeroVagas) VALUES
 ('FND01', 'DEP01', 'Matemática Fundamental', 'Fundamental', 900, 250),
@@ -143,6 +143,40 @@ INSERT INTO Curso (SiglaCurso, SiglaDepartamento, NomeCurso, Classificacao, Carg
 ('TC08', 'DEP07', 'Técnico em Meio Ambiente', 'Técnico', 1800, 60),
 ('TC09', 'DEP06', 'Técnico em Física Aplicada', 'Técnico', 1800, 50),
 ('TC10', 'DEP03', 'Técnico em Redes de Computadores', 'Técnico', 1800, 100);
+
+INSERT INTO Regras (CodigoRegra, SiglaCurso, FrequenciaMinima, CriterioAvaliacao, Infraestrutura) VALUES
+(1, 'FND01', 75.00, 'Provas mensais e atividades semanais.', 'Sala com quadro branco e projetor.'),
+(2, 'FND02', 75.00, 'Redações e provas objetivas.', 'Sala com acervo de livros e dicionários.'),
+(3, 'FND03', 75.00, 'Análise de textos e participação.', 'Sala temática com mapas históricos.'),
+(4, 'FND04', 75.00, 'Trabalhos em grupo e provas escritas.', 'Sala equipada com globos e mapas.'),
+(5, 'FND05', 75.00, 'Provas teóricas e experimentos.', 'Laboratório de Ciências.'),
+(6, 'FND06', 70.00, 'Avaliações práticas e portfólios.', 'Ateliê de artes com materiais diversos.'),
+(7, 'FND07', 80.00, 'Provas práticas e avaliação física.', 'Quadra e sala de ginástica.'),
+(8, 'FND08', 75.00, 'Projetos e seminários sobre saúde.', 'Sala com recursos de saúde.'),
+(9, 'FND09', 80.00, 'Exercícios lógicos e testes orais.', 'Sala com materiais de lógica e jogos.'),
+(10, 'FND10', 75.00, 'Projetos em grupo e testes práticos.', 'Laboratório de informática com acesso à internet.'),
+
+(11, 'EM01', 80.00, 'Provas bimestrais e listas de exercícios.', 'Sala com lousa digital.'),
+(12, 'EM02', 80.00, 'Análise textual e provas discursivas.', 'Sala com biblioteca integrada.'),
+(13, 'EM03', 75.00, 'Debates, provas e ensaios filosóficos.', 'Sala com acervo filosófico.'),
+(14, 'EM04', 75.00, 'Trabalhos reflexivos e provas.', 'Sala multimídia.'),
+(15, 'EM05', 80.00, 'Provas teóricas e experimentos químicos.', 'Laboratório de química.'),
+(16, 'EM06', 80.00, 'Listas de exercícios e provas práticas.', 'Laboratório de física.'),
+(17, 'EM07', 75.00, 'Criação artística e avaliação prática.', 'Estúdio de arte e exposição.'),
+(18, 'EM08', 85.00, 'Avaliação física e prática esportiva.', 'Ginásio e campo.'),
+(19, 'EM09', 80.00, 'Provas, experimentos e pesquisas.', 'Laboratório de biologia com microscópios.'),
+(20, 'EM10', 80.00, 'Projetos computacionais e provas práticas.', 'Laboratório com rede e computadores.'),
+
+(21, 'TC01', 85.00, 'Projetos práticos e provas técnicas.', 'Laboratório de informática avançada.'),
+(22, 'TC02', 85.00, 'Oficinas práticas e provas técnicas.', 'Oficina mecânica equipada.'),
+(23, 'TC03', 85.00, 'Estudos de caso e simulações.', 'Sala de administração com softwares específicos.'),
+(24, 'TC04', 85.00, 'Aulas práticas e estágio supervisionado.', 'Laboratório de enfermagem.'),
+(25, 'TC05', 85.00, 'Portfólios digitais e apresentações.', 'Sala de design com computadores gráficos.'),
+(26, 'TC06', 90.00, 'Avaliações práticas e físicas.', 'Sala com equipamentos esportivos.'),
+(27, 'TC07', 85.00, 'Práticas laboratoriais e provas.', 'Laboratório de química técnica.'),
+(28, 'TC08', 85.00, 'Trabalhos de campo e avaliações escritas.', 'Sala com recursos ambientais e vídeos.'),
+(29, 'TC09', 85.00, 'Simulações e testes práticos.', 'Laboratório com kits de física aplicada.'),
+(30, 'TC10', 85.00, 'Configuração de redes e provas práticas.', 'Laboratório de redes com switches e roteadores.');
 
 -- Unidade 1 (São Paulo) - 10 cursos
 INSERT INTO Vinculo (IDEscola, SiglaCurso) VALUES
@@ -256,6 +290,40 @@ INSERT INTO ComporCursoDisciplina (SiglaCurso, SiglaDisciplina) VALUES
 ('TC04', 'D007'),
 ('TC04', 'D028'),
 ('TC09', 'D017');
+
+-- Inserindo as regras de cursos que são pré-requisitos de outros cursos
+-- Ensino Médio requer Fundamental
+INSERT INTO PreRequisitoCurso (SiglaCurso, SiglaCursoPreReq) VALUES
+('EM01', 'FND01'), 
+('EM02', 'FND02'),
+('EM05', 'FND05'), 
+('EM06', 'FND05');
+
+-- Técnico requer Ensino Médio
+INSERT INTO PreRequisitoCurso (SiglaCurso, SiglaCursoPreReq) VALUES
+('TC01', 'EM10'), 
+('TC04', 'EM09'),
+('TC07', 'EM05'),
+('TC09', 'EM06');
+
+-- Inserindo as regras de disciplinas que são pré-requisitos para outros cursos
+-- Para FND01 (Matemática Fundamental)
+INSERT INTO PreRequisitoDisciplina (SiglaCurso, CodigoDisciplinaPreReq) VALUES
+('FND01', 'D001'), 
+('FND01', 'D008');
+
+-- Para EM01 (Matemática Ensino Médio)
+INSERT INTO PreRequisitoDisciplina (SiglaCurso, CodigoDisciplinaPreReq) VALUES
+('EM01', 'D015');
+
+-- Para TC01 (Técnico em Informática)
+INSERT INTO PreRequisitoDisciplina (SiglaCurso, CodigoDisciplinaPreReq) VALUES
+('TC01', 'D001'),
+('TC01', 'D024'); 
+
+-- Para EM05 (Química Ensino Médio)
+INSERT INTO PreRequisitoDisciplina (SiglaCurso, CodigoDisciplinaPreReq) VALUES
+('EM05', 'D004'); 
 
 INSERT INTO Mensagem (IDMensagem, TextoMensagem) VALUES
 (1, 'Lembre-se de estudar para a prova de Matemática!'),

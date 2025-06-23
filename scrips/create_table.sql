@@ -22,7 +22,6 @@ CREATE TABLE UnidadeEscolar (
     NumeroPredio VARCHAR(10)
 );
 
-
 -- Tabela Professor
 CREATE TABLE Professor (
     CPFUsuario CHAR(11) PRIMARY KEY,
@@ -52,7 +51,7 @@ CREATE TABLE Funcionario (
 -- Tabela Departamento
 CREATE TABLE Departamento (
     SiglaDepartamento CHAR(5) PRIMARY KEY,
-    CPFProfessor CHAR(11),
+    CPFProfessor CHAR(11) NOT NULL UNIQUE,
     NomeDepartamento VARCHAR(100),
     FOREIGN KEY (CPFProfessor) REFERENCES Professor(CPFUsuario)
 );
@@ -240,6 +239,4 @@ CREATE TABLE Avaliacao (
     CHECK (RatingInfraestrutura BETWEEN 0 AND 5),
     CHECK (RatingRelevancia BETWEEN 0 AND 5)
 );
-
-
 

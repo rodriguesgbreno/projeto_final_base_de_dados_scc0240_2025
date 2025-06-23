@@ -52,4 +52,41 @@ WHERE i.CPFAluno = '12345678901'
   AND i.DataInscricao < '2024-01-26 00:00:00'
 ORDER BY i.DataInscricao;
 
+-- Query para listar os comentários sobre um professor com rating < 3 para uma disciplina específica
+SELECT 
+    a.CPFProfessor,
+    u.NomeUsuario || ' ' || u.SobrenomeUsuario AS NomeProfessor,
+    a.CodigoDisciplina,
+    d.NomeDisciplina,
+    a.RatingProfessor,
+    a.Comentario
+FROM Avaliacao a
+JOIN Usuario u ON u.CPF = a.CPFProfessor
+JOIN Disciplina d ON d.Codigo = a.CodigoDisciplina
+WHERE a.RatingProfessor < 3
+  AND a.CodigoDisciplina = 'D001'           
+  AND a.CPFProfessor = '11223344556';
+
+-- Query para listar as disciplinas de um determinado curso
+SELECT 
+    c.SiglaCurso,
+    c.NomeCurso,
+    d.Codigo,
+    d.NomeDisciplina
+FROM ComporCursoDisciplina cd
+JOIN Curso c ON c.SiglaCurso = cd.SiglaCurso
+JOIN Disciplina d ON d.Codigo = cd.SiglaDisciplina
+WHERE c.SiglaCurso = 'FND01';
+
+-- Query para listar os horários de aulas para um determinado professor
+SELECT 
+    od.CodigoDisciplina,
+    d.NomeDisciplina,
+    od.Dia,
+    od.Hora,
+    od.Sala
+FROM OfertaDisciplina od
+JOIN Disciplina d ON d.Codigo = od.CodigoDisciplina
+WHERE od.CPFProfessor = '11223344556'
+ORDER BY od.Dia, od.Hora;
 

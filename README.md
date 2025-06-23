@@ -44,7 +44,7 @@ jupyter lab
  - Consulta para calcular a média do Rating sobre um professor específico
  - Consulta para listar as inscrições de um aluno específico em um intervalo de datas
  - Consultar os comentários sobre um professor com rating < 3
- - Consultar a área de especialização dos professores de um determinado departamento
+ - Consultar as disciplinas de um determinado curso
  - Consultar os horários de aulas para um determinado professor
 
 ## 🗂️ Documentos e Links Necessários
@@ -54,7 +54,7 @@ jupyter lab
 
 ### 📝 Modelagem
  - Arquivo para visualizar no [Diagrams.net](https://app.diagrams.net/)
- - [AQUI](documentos/der_sistema_gestao_escolar)
+ - [AQUI](documentos/modelagem_sistema_gestao_escolar)
     - 1ª Página = Diagrama Entidade Relacionamento
     - 2ª Página = Modelo Relacional
 
