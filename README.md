@@ -66,6 +66,4 @@ jupyter lab
  - Documentação da Modelagem [AQUI](documentos/Documentação%20do%20Projeto%20Final.pdf)
 
 ### 🎥 Vídeo do Projeto em Execução
- - [Vídeo](https://www.youtube.com/watch?v=HjbM-BXxCBk) explicando a base de dados rodando
-
-
+ - [Vídeo](https://www.youtube.com/watch?v=FHgnhBufqg0) explicando a base de dados rodando
