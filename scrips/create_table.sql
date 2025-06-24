@@ -62,7 +62,6 @@ CREATE TABLE Disciplina (
     NomeDisciplina VARCHAR(100),
     QTDAulas INT,
     MaterialDidatico VARCHAR(500)
-
 );
 
 -- Tabela Curso

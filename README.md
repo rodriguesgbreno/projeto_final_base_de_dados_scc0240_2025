@@ -56,14 +56,16 @@ jupyter lab
  - [Arquivo](documentos/modelagem_sistema_gestao_escolar) para visualizar no [Diagrams.net](https://app.diagrams.net/)
     - 1ª Página = Diagrama Entidade Relacionamento
     - 2ª Página = Modelo Relacional
+    - 3ª Página = Modelo Relacional Normalizado
 
  - Se preferir pode visualizar o Diagrama Entidade Relacionamento [AQUI](documentos/modelagem_sistema_gestao_escolar-DER.drawio.svg)
- - E também o Modelo Relacional [AQUI](documentos/modelagem_sistema_gestao_escolar-MRel.drawio.svg)
+ - O Modelo Relacional [AQUI](documentos/modelagem_sistema_gestao_escolar-MRel.drawio.svg)
+ - O Modelo Normalizado [AQUI](documentos/modelagem_sistema_gestao_escolar-MRel-Normalizado.drawio.svg)
 
 ### 📝 Atividades Realizadas
- - Documentação da Modelagem [AQUI](documentos/Documentação%20do%20Projeto%20Final.docx)
+ - Documentação da Modelagem [AQUI](documentos/Documentação%20do%20Projeto%20Final.pdf)
 
 ### 🎥 Vídeo do Projeto em Execução
- - [EM DESENVOLVIMENTO]
+ - [Vídeo](https://www.youtube.com/watch?v=HjbM-BXxCBk) explicando a base de dados rodando
 
 
