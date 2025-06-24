@@ -53,10 +53,12 @@ jupyter lab
  - Você pode encontrar o arquivo [AQUI](documentos/descricao_projeto_final_bd.pdf)
 
 ### 📝 Modelagem
- - Arquivo para visualizar no [Diagrams.net](https://app.diagrams.net/)
- - [AQUI](documentos/modelagem_sistema_gestao_escolar)
+ - [Arquivo](documentos/modelagem_sistema_gestao_escolar) para visualizar no [Diagrams.net](https://app.diagrams.net/)
     - 1ª Página = Diagrama Entidade Relacionamento
     - 2ª Página = Modelo Relacional
+
+ - Se preferir pode visualizar o Diagrama Entidade Relacionamento [AQUI](documentos/modelagem_sistema_gestao_escolar-DER.drawio.svg)
+ - E também o Modelo Relacional [AQUI](documentos/modelagem_sistema_gestao_escolar-MRel.drawio.svg)
 
 ### 📝 Atividades Realizadas
  - Documentação da Modelagem [AQUI](documentos/Documentação%20do%20Projeto%20Final.docx)
